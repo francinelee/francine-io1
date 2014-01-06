@@ -163,7 +163,6 @@ $(window).load(function(){
 	  }
 	  // Reloads script on filter.
         $.getScript("js/load-more.js");
-        $.getScript("js/maps.js");
         return false;
       });
 
