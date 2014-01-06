@@ -23,35 +23,6 @@
     <link rel="stylesheet" href="css/flexslider.css" type="text/css">
     <link rel="stylesheet" href="css/isotope.css" />
     <link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css"/>
-    
-    <!-- Le javascript
-    ================================================== -->
-    
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script> 
-    <script src="js/jquery.flexslider-min.js"></script>  
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/jquery.infinitescroll.min.js"></script>
-    <script src="js/jquery.browser.mobile.js"></script>  
-    <script src="js/jquery.manual-trigger.js"></script>
-    <script src="js/jquery.ba-bbq.min.js"></script>
-    <script type="text/javascript" src="js/jquery.fancybox.js"></script>
-    
-    <!-- Le preloader
-    ================================================== -->
-    <script type="text/javascript">
-        //<![CDATA[
-            $(window).load(function() { // makes sure the whole site is loaded
-                $("#status").fadeOut(); // will first fade out the loading animation
-                $("#preloader").delay(200).fadeOut("slow"); // will fade out the white DIV that covers the website.
-                $("#preloader-container").css("position","static");
-                $(".widget .entry-container").each(function(index) {
-                    $(this).delay(400*index).animate({'opacity': 1},300);
-                    
-                });  
-            })
-        //]]>
-    </script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -802,7 +773,36 @@
 </div>
 
 
- 
+
+<!-- Le javascript
+================================================== -->
+
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.flexslider-min.js"></script>  
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.infinitescroll.min.js"></script>
+<script src="js/jquery.browser.mobile.js"></script>  
+<script src="js/jquery.manual-trigger.js"></script>
+<script src="js/jquery.ba-bbq.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+
+<!-- Le preloader
+================================================== -->
+<script type="text/javascript">
+    //<![CDATA[
+        $(window).load(function() { // makes sure the whole site is loaded
+            $("#status").fadeOut(); // will first fade out the loading animation
+            $("#preloader").delay(200).fadeOut("slow"); // will fade out the white DIV that covers the website.
+            $("#preloader-container").css("position","static");
+            $(".widget .entry-container").each(function(index) {
+                $(this).delay(400*index).animate({'opacity': 1},300);
+                
+            });  
+        })
+    //]]>
+</script>
+
  <!-- CHANGE HOVER TO ON CLICK FOR MOBILE DEVICES
  ================================================== -->
  
@@ -880,8 +880,7 @@
 <!-- JQUERY (isotope)
 ================================================== -->
 <!-- Script for the super awesome grid (Thanks, David DeSandro) -->
-
 <script src="js/jquery.isotope_custom.js"></script> 
-    
+
   </body>
 </html>
