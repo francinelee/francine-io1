@@ -1,4 +1,4 @@
-$(window).load(function(){
+function IsotopeInitialize() {
 
     // This makes the grid centered
     $.Isotope.prototype._getCenteredMasonryColumns = function() {
@@ -199,4 +199,4 @@ $(window).load(function(){
         hashChanged = true;
     })
     .trigger('hashchange'); // trigger hashchange to capture any hash data on init
-});
+};
