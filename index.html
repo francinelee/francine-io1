@@ -23,36 +23,6 @@
     <link rel="stylesheet" href="css/flexslider.css" type="text/css">
     <link rel="stylesheet" href="css/isotope.css" />
     <link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css"/>
-    
-    <!-- Le javascript
-    ================================================== -->
-    
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script> 
-    <script src="js/jquery.flexslider-min.js"></script>  
-    <script src="js/load-more.js"></script> 
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/jquery.infinitescroll.min.js"></script>
-    <script src="js/jquery.browser.mobile.js"></script>  
-    <script src="js/jquery.manual-trigger.js"></script>
-    <script src="js/jquery.ba-bbq.min.js"></script>
-    <script type="text/javascript" src="js/jquery.fancybox.js"></script>
-    
-    <!-- Le preloader
-    ================================================== -->
-    <script type="text/javascript">
-        //<![CDATA[
-            $(window).load(function() { // makes sure the whole site is loaded
-                $("#status").fadeOut(); // will first fade out the loading animation
-                $("#preloader").delay(200).fadeOut("slow"); // will fade out the white DIV that covers the website.
-                $("#preloader-container").css("position","static");
-                $(".widget .entry-container").each(function(index) {
-                    $(this).delay(400*index).animate({'opacity': 1},300);
-                    
-                });  
-            })
-        //]]>
-    </script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -81,7 +51,7 @@
   </head>
 
 
-<body onload="initialize()">
+<body>
 
 <!-- Preloader -->
 <div id="preloader">
@@ -803,98 +773,90 @@
 </div>
 
 
- 
- <!-- CHANGE HOVER TO ON CLICK FOR MOBILE DEVICES
- ================================================== -->
- 
- <script>
- var isiPad = /ipad/i.test(navigator.userAgent.toLowerCase());
- 
- if (isiPad) { 
-	 $("nav ul li").click(function() {
-	 	event.stopPropagation();
-	 	$("ul", this).toggle();
-	 });
-	
-	$(document).click( function(){
-		$('nav ul li > ul').hide();
-	});
-}
- </script>
- 
- <!-- JQUERY (load more)
- ================================================== -->
- <!-- Make sure Load more only works for blog -->
- 
- <script>
- if(document.location.toString().indexOf('#filter=.blog')!=-1){
- 
- 	$("#page_nav").css("display","block");
- 	
- } else {
- 
- 	$("#page_nav").css("display","none");
- 
- }
- </script>
- 
-<!-- JQUERY (flexslider)
-================================================== -->
-<!-- Script for the awesome slider -->
 
-<script type="text/javascript">
+<!-- Le javascript
+================================================== -->
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+<!-- Switch the top one for this one when developing locally without internet access.
+<script src="js/jquery-1.7.1.min.js"></script> -->
+
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.flexslider-min.js"></script>  
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.infinitescroll.min.js"></script>
+<script src="js/jquery.browser.mobile.js"></script>  
+<script src="js/jquery.manual-trigger.js"></script>
+<script src="js/jquery.ba-bbq.min.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox.js"></script>
+<!-- JQUERY (isotope)
+================================================== -->
+<!-- Script for the super awesome grid (Thanks, David DeSandro) -->
+<script src="js/jquery.isotope_custom.js"></script> 
+
+
+<script>
+    //<![CDATA[
+        $(window).load(function() { // makes sure the whole site is loaded
+            // Le preloader
+            // ==================================================
+            $("#status").fadeOut(); // will first fade out the loading animation
+            $("#preloader").delay(200).fadeOut("slow"); // will fade out the white DIV that covers the website.
+            $("#preloader-container").css("position","static");
+            $(".widget .entry-container").each(function(index) {
+                $(this).delay(400*index).animate({'opacity': 1},300);
+                
+            });  
+
+            // initialize custom isotope stuff
+            IsotopeInitialize();
+        })
+    //]]>
+
+  // CHANGE HOVER TO ON CLICK FOR MOBILE DEVICES
+  // ==================================================
+  var isiPad = /ipad/i.test(navigator.userAgent.toLowerCase());
+  if (isiPad) { 
+    $("nav ul li").click(function() {
+      event.stopPropagation();
+      $("ul", this).toggle();
+    });
+
+    $(document).click( function(){
+      $('nav ul li > ul').hide();
+    });
+  }
+
   $(function() {
+    // JQUERY (flexslider)
+    // ==================================================
+    // Script for the awesome slider
     $('.full-slider .flexslider').flexslider({
     	animation: "slide",
     	directionNav: true, 
     
     });
-    
+
     $('.widget-slider .flexslider').flexslider({
     	animation: "slide",
     	directionNav: false, 
     	slideshow: false
     
     });
-    
+
+    // JQUERY (fancy)
+    // ==================================================
+    // Script for the awesome fancybox
+    $(".fancybox").fancybox({
+    	helpers : {
+    	        overlay : {
+    	            locked : false
+    	        }
+    	    },
+    	    
+    	    padding: ['5px', '5px', '5px', '5px']
+    });
+
   });
 </script>
-
-<!-- JQUERY (hash)
-================================================== -->
-<!-- reexcute scripts on hash change -->
-
-<script>
-
-$(window).bind( 'hashchange', function( event ) {
-  $.getScript("js/load-more.js")
-});
-
-</script>
-
-<!-- JQUERY (fancy)
-================================================== -->
-<!-- Script for the awesome fancybox -->
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$(".fancybox").fancybox({
-			helpers : {
-			        overlay : {
-			            locked : false
-			        }
-			    },
-			    
-			    padding: ['5px', '5px', '5px', '5px']
-		});
-	});
-</script>
-
-<!-- JQUERY (isotope)
-================================================== -->
-<!-- Script for the super awesome grid (Thanks, David DeSandro) -->
-
-<script src="js/jquery.isotope_custom.js"></script> 
-    
   </body>
 </html>
