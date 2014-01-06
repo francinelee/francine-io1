@@ -161,8 +161,6 @@ $(window).load(function(){
 	 	 $('#nav-collapse').removeClass('in');
 	  	$('#nav-collapse').css('height','0');
 	  }
-	  // Reloads script on filter.
-        $.getScript("js/load-more.js");
         return false;
       });
 
