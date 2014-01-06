@@ -139,8 +139,12 @@ $(window).load(function(){
       }
   
       $optionSets.find('a').click(function(){
-      	
         var $this = $(this);
+        // quick fix to handle non isotope links.
+        if(this.href.indexOf('#') === -1) {
+          window.location.href = this.href;
+          return;
+        }
         // don't proceed if already selected
         if ( $this.hasClass('selected') ) {
           return;
