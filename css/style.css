@@ -22,7 +22,7 @@
 	padding: 0px; 
 }
 body { 
-	background: #FCF7F2; 
+	background: #F9F1E0; 
 	padding-top: 100px; 
 	margin: 0; 
 	height: 100%;  
@@ -140,7 +140,7 @@ blockquote p {
 }
 #preloader {
     position: absolute; top:0; left:0; right:0; bottom:0;
-    background-color: #FCF7F2; /* change if the mask should have another color then white */
+    background-color: #F9F1E0; /* change if the mask should have another color then white */
     z-index: 400; /* makes sure it stays on top */
     margin-top: 100px;
 }
@@ -255,7 +255,7 @@ textarea:focus {
 .navigation {	
 	padding: 18px 18px 0px 18px;
 	width: 100%;
-	background: #FCF7F2;
+	background: #F9F1E0;
 	position: fixed;
 	top: 0;
 	border-bottom: 1px solid #eeeeee;
@@ -530,19 +530,30 @@ nav .nav ul ul {
 .comment {
 	background: url(../img/icon_comment.png) no-repeat center; background-size: contain;
 }
-.stripesY {
+.stripesP {
 	height: 8px; width: 100%;
 	background: #96d0e6;
 	position: absolute; bottom: 0; left: 0;
 	z-index: 2;
 }
 
-.stripesB {
+.stripesA {
 	height: 8px; width: 100%;
 	background: #FFB3A2;
 	position: absolute; bottom: 0; left: 0;
 	z-index: 2;	
 }
+
+.stripesPA {
+	height: 8px; width: 100%;
+	background: -webkit-linear-gradient(left, #FFB3A2, #96d0e6);
+background: -o-linear-gradient(right, #FFB3A2, #96d0e6);
+background: -moz-linear-gradient(right, #FFB3A2, #96d0e6);
+background: linear-gradient(to right, #FFB3A2, #96d0e6);
+	position: absolute; bottom: 0; left: 0;
+	z-index: 2;	
+}
+
 
 /* ENTRY SHADOW */
 
