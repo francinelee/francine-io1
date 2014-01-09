@@ -985,14 +985,10 @@
         if(!uid) { return }
 
         var heart = dictionary[uid];
-        if(heart) {
-          $count.html( heart.get("count") );
-        }
-        else {
+        if(!heart) {
           heart = new self.HeartObject();
           heart.save({ "uid" : uid, "count" : 0 })
         }
-
         $count.html( heart.get("count") );
 
         var userHeartToken = "Heart-" + uid;
